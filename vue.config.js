@@ -1,9 +1,9 @@
 const assetsCDN = {
   externals: {
-    'vue': 'Vue',
+    vue: 'Vue',
     'vue-router': 'VueRouter',
-    'vuex': 'Vuex',
-    'axios': 'axios'
+    vuex: 'Vuex',
+    axios: 'axios'
   },
   css: [],
   js: []
@@ -36,7 +36,7 @@ const vueConfig = {
     watchOptions: { ignored: /node_modules/ },
     proxy: {
       '/service-t-k8s': {
-        target: 'http://127.0.0.1:7799/service-t-k8s',
+        target: 'http://127.0.0.1:7799',
         ws: false,
         changeOrigin: true
       }
