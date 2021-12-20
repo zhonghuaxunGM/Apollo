@@ -1,6 +1,6 @@
 <template>
   <a-form-model-item>
-    <a-button @click="$emit('precheck')">precheck</a-button>
+    <a-button @click="precheck">precheck</a-button>
   </a-form-model-item>
 </template>
 
