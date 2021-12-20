@@ -94,7 +94,10 @@ export default {
         ntpdate_sever: 'ntp1.aliyun.com',
         server_user: 'jkstack',
         firewalld: {
-          status: true
+          status: true,
+          k8s_master_ports: ['80/tcp', '443/tcp', '2376/tcp', '6443/tcp', '8472/udp', '9099/tcp', '10250/tcp', '10254/tcp', '30000-32767/tcp', '30000-32767/udp'],
+          k8s_etcd_ports: ['2376/tcp', '2379-2380/tcp', '8472/udp', '9099/tcp', '10250/tcp'],
+          k8s_worker_ports: ['22/tcp', '80/tcp', '443/tcp', '2376/tcp', '8472/udp', '9099/tcp', '10250/tcp', '10254/tcp', '30000-32767/tcp', '30000-32767/udp']
         }
       },
       step: 1,

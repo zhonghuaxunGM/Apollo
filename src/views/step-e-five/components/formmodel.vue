@@ -3,7 +3,7 @@
     <a-row :gutter="16" :style="{ width: '100vw' }">
       <a-col :span="12">
         <a-form-model-item>
-          <a-button @click="initialize">initialize</a-button>
+          <a-button @click="launch">launch</a-button>
         </a-form-model-item>
       </a-col>
 
@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import service from '../../utils/request'
-
 export default {
   props: {
     form: {
@@ -24,22 +22,9 @@ export default {
       default: () => ({})
     }
   },
+
   data() {
-    return {
-      // spinning:false,
-      response: {}
-    }
-  },
-  methods: {
-    initialize() {
-      service({
-        url: '/service-t-k8s/v1/env/provision',
-        method: 'post',
-        data: this.form
-      }).then((res) => {
-        this.response = res
-      })
-    }
+    return {}
   }
 }
 </script>
