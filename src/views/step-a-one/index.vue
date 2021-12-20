@@ -12,7 +12,7 @@
       </a-col>
 
       <a-col :span="12">
-        <p style="white-space:pre-wrap;"> {{ response }}</p>
+        <p style="white-space:pre-wrap;">{{ response }}</p>
       </a-col>
     </a-row>
   </div>
@@ -25,51 +25,16 @@ import service from '../../utils/request'
 export default {
   components: { FormModel },
 
+  props: {
+    form: {
+      type: Object,
+      default: () => ({})
+    }
+  },
+
   data() {
     return {
       // spinning:false,
-      form: {
-        server: {
-          server_url: '127.0.0.1',
-          server_port: '7799',
-          server_path: '/service-t-k8s/api/v1/'
-        },
-        host: [
-          {
-            ip: '192.168.0.0',
-            user: 'root',
-            password: 'JKSTACKPB@sre1!',
-            ssh_port: '22',
-            size: {
-              cpu_num: '4',
-              memory_num: '10240',
-              disk_num: '102400',
-              disk_path: '/data'
-            },
-            role: []
-          }
-        ],
-        harbor_info: {
-          host_ip: '192.168.0.0',
-          host_ssh_port: '22',
-          host_user: 'root',
-          host_password: 'JKSTACKPB@sre1!',
-          harbor_port: '7798',
-          harbor_user: 'admin',
-          harbor_password: 'Harbor12345'
-        },
-        network: {
-          service_cluster_ip_range: '10.43.0.0/16',
-          cluster_cidr: '10.42.0.0/16',
-          cluster_dns_server: '10.43.0.10',
-          up_stream_name_servers: ['']
-        },
-        ntpdate_sever: 'ntp1.aliyun.com',
-        server_user: 'jkstack',
-        firewalld: {
-          status: true
-        }
-      },
       response: {}
     }
   },
@@ -83,19 +48,19 @@ export default {
         url: '/service-t-k8s/v1/config/load',
         method: 'post',
         data: this.form.server
-      }).then((res) => {
+      }).then(res => {
         res1 = JSON.stringify(res)
         service({
           url: '/service-t-k8s/v1/env/load',
           method: 'post',
           data: this.form
-        }).then((result) => {
+        }).then(result => {
           res2 = JSON.stringify(result)
-          this.response = res1 +'\n'+'\n'+'\n'+ res2
+          this.response = res1 + '\n' + '\n' + '\n' + res2
         })
       })
 
-        // this.spinning = false
+      // this.spinning = false
     },
 
     handleradd() {

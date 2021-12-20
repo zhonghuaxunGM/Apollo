@@ -8,13 +8,20 @@
 import service from '../../utils/request'
 
 export default {
+  props: {
+    form: {
+      type: Object,
+      default: () => ({})
+    }
+  },
+
   methods: {
     precheck() {
       service({
         url: '/service-t-k8s/v1/env/pre-check',
         method: 'post',
         data: this.form
-      }).then((res) => {
+      }).then(res => {
         this.response = res
       })
     }
