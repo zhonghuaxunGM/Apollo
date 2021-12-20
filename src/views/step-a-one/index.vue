@@ -76,8 +76,8 @@ export default {
       // this.mock(this.form).then(res => {
       service({
         url: '/service-t-k8s/v1/version/build',
-        method: 'get'
-      }).then((res) => {
+        method: 'post'
+      }).then(res => {
         this.response = res
       })
       // service.post('http://127.0.0.1:7799/service-t-k8s/v1/version/build', this.form).then((res) => {
