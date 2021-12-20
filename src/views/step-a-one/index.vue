@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-spin  :spinning="spinning">
+    <!-- <a-spin  :spinning="spinning"> -->
     <a-row :gutter="16" :style="{ width: '100vw' }">
       <a-col :span="12">
         <form-model
@@ -27,7 +27,7 @@ export default {
 
   data() {
     return {
-      spinning:false,
+      // spinning:false,
       form: {
         server_url: '127.0.0.1',
         server_port: '7799',
@@ -72,12 +72,18 @@ export default {
 
   methods: {
     handleSubmit() {
-      this.spinning = true
+      // this.spinning = true
       // this.mock(this.form).then(res => {
-      service.post('http://localhost', this.form).then((res) => {
+      service({
+        url: '/service-t-k8s/v1/version/build',
+        method: 'get'
+      }).then((res) => {
         this.response = res
-        this.spinning = false
       })
+      // service.post('http://127.0.0.1:7799/service-t-k8s/v1/version/build', this.form).then((res) => {
+      // this.response = res
+      //   // this.spinning = false
+      // })
       // })
     },
 

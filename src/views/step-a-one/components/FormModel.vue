@@ -1,5 +1,9 @@
 <template>
   <a-form-model :model="form" :label-col="labelCol" :wrapper-col="wrapperCol">
+    <a-form-model-item>
+      <a-button @click="$emit('submit')">submit</a-button>
+    </a-form-model-item>
+
     <a-divider>ControlPlane Config</a-divider>
 
     <div>
@@ -141,7 +145,7 @@
     <a-divider>firewalld</a-divider>
 
     <a-form-model-item label="firewalld">
-      <a-switch v-model="form.firewalld"/>
+      <a-switch v-model="form.firewalld" />
     </a-form-model-item>
 
     <div v-show="form.firewalld">

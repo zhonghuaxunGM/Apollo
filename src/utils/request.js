@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import axios from 'axios'
-import { ACCESS_TOKEN } from '@/store/mutation-types'
+// import { ACCESS_TOKEN } from '@/store/mutation-types'
+
+const ACCESS_TOKEN = 'Authorization'
 
 const service = axios.create({
-  baseURL: process.env.VUE_APP_API_BASE_URL,
+  // baseURL: process.env.VUE_APP_API_BASE_URL,
+  baseURL: '/',
   timeout: 6000
 })
 
