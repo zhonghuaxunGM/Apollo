@@ -8,19 +8,19 @@
 
     <div>
       <a-form-model-item label="server_url">
-        <a-input v-model="form.server_url" />
+        <a-input v-model="form.server.server_url" />
       </a-form-model-item>
 
       <a-form-model-item label="server_port">
-        <a-input v-model="form.server_port" />
+        <a-input v-model="form.server.server_port" />
       </a-form-model-item>
 
       <a-form-model-item label="server_path">
-        <a-input v-model="form.server_path" />
+        <a-input v-model="form.server.server_path" />
       </a-form-model-item>
     </div>
 
-    <a-divider>Server Config</a-divider>
+    <a-divider>Cluster Config</a-divider>
 
     <div>
       <a-collapse v-model="activeKey" accordion>
@@ -67,8 +67,8 @@
 
           <a-form-model-item label="role">
             <a-checkbox-group v-model="item.role">
-              <a-checkbox value="1" name="type"> master </a-checkbox>
-              <a-checkbox value="2" name="type"> nide </a-checkbox>
+              <a-checkbox value="master" name="type"> master </a-checkbox>
+              <a-checkbox value="node" name="type"> node </a-checkbox>
             </a-checkbox-group>
           </a-form-model-item>
         </a-collapse-panel>
@@ -126,9 +126,9 @@
         <a-input v-model="form.network.cluster_dns_server" />
       </a-form-model-item>
 
-      <a-form-model-item label="network_up_stream_name_servers">
-        <a-input v-model="form.network.up_stream_name_servers" />
-      </a-form-model-item>
+      <!-- <a-form-model-item label="network_up_stream_name_servers"> -->
+        <!-- <a-input v-model="form.network.up_stream_name_servers" /> -->
+      <!-- </a-form-model-item> -->
     </div>
 
     <a-divider>others</a-divider>
@@ -145,10 +145,10 @@
     <a-divider>firewalld</a-divider>
 
     <a-form-model-item label="firewalld">
-      <a-switch v-model="form.firewalld" />
+      <a-switch v-model="form.firewalld.status" />
     </a-form-model-item>
 
-    <div v-show="form.firewalld">
+    <div v-show="form.firewalld.status">
       <a-table :columns="columns" :data-source="data" :pagination="false">
         <a slot="name" slot-scope="text">{{ text }}</a>
       </a-table>
