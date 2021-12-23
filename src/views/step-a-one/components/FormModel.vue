@@ -127,7 +127,7 @@
       </a-form-model-item>
 
       <!-- <a-form-model-item label="network_up_stream_name_servers"> -->
-        <!-- <a-input v-model="form.network.up_stream_name_servers" /> -->
+      <!-- <a-input v-model="form.network.up_stream_name_servers" /> -->
       <!-- </a-form-model-item> -->
     </div>
 

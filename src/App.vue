@@ -5,9 +5,9 @@
       <a-step title="预检" />
       <a-step title="初始化环境" />
       <a-step title="部署集群" />
-      <a-step title="创建资源" />
       <a-step title="上传物料" />
       <a-step title="部署应用" />
+      <a-step title="完成" />
     </a-steps>
 
     <div :style="{ flex: 1, overflow: 'auto' }">

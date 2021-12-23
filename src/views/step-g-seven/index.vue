@@ -1,3 +1,3 @@
 <template>
-  <div>step 3</div>
+  <div>完成</div>
 </template>
