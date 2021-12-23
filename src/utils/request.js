@@ -7,7 +7,7 @@ const ACCESS_TOKEN = 'Authorization'
 const service = axios.create({
   // baseURL: process.env.VUE_APP_API_BASE_URL,
   baseURL: '/',
-  timeout: 60000
+  timeout: 600000
 })
 
 const err = error => {
