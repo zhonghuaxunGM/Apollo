@@ -31,5 +31,3 @@ Vue.use(Steps)
   .use(Collapse)
   .use(Divider)
   .use(Table)
-
-document.title = btoa('²Û©\x89Ün')
